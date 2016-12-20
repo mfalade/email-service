@@ -1,6 +1,5 @@
 """Views to handle all api requests."""
 import json
-import requests
 
 from flask import jsonify, make_response, request
 from flask_cors import CORS
@@ -23,11 +22,9 @@ def healthcheck():
 
 @api.route('/sendmail', methods=['POST'])
 def sendmail():
-    """View to handle sending of mails."""
     dispatcher.send_email(request.json)
     return json.dumps({
         'status_code': 200,
-        'status': 'sent',
-        'msg': "I see you",
+        'status': 'success',
         'data': request.json
     })
