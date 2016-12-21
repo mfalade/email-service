@@ -1,2 +1,2 @@
 # email-service
-Simple email service built with flask since mailgun is being such a b*tch
+Simple email service built with flask. Not sure I need this actually.
